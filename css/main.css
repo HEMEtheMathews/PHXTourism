@@ -1,0 +1,425 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&family=Roboto:wght@100..900');
+/* CSS Document */
+
+html, body{
+  font-family: "Sawarabi Gothic", sans-serif;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+p{
+	text-indent: 1em;
+}
+img{
+	height: auto;
+	max-width: 100%;
+}
+
+/*----NavBar----*/
+#navbar{
+  width: 100%;
+  height: 80px;
+	
+  background: rgba(50,50,50,1.00);
+}
+#navbar .logo{
+  display: block;
+  float: left;
+  height: 60px;
+  width: 250px;
+  margin: 10px 30px;
+	
+  background: url("../images/SVG/PHX_bird_logo-side.svg");
+	background-repeat: no-repeat;
+}
+#menuToggle{
+  float: right;
+  display: block;
+  position: relative;
+  top: 20px;
+  right: 20px;
+  
+  z-index: 1;
+}
+#menuToggle a{
+  text-decoration: none;
+  color: #f3f3f3;
+}
+#menuToggle input
+{
+  display: block;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0;
+  z-index: 2;
+  
+  -webkit-touch-callout: none;
+}
+#menuToggle span
+{
+  display: block;
+  width: 53px;
+  height: 6px;
+  margin-bottom: 10px;
+  position: relative;
+  
+  background: #f3f3f3;
+  border-radius: 6px;
+  
+  z-index: 1;
+  
+  transform-origin: 43px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 100% 0%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(-45deg) translate(-2px, -1px);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -327px;
+  padding: 50px;
+  padding-top: 125px;
+  overflow: hidden;
+  
+  background: rgba(31,31,31,1.00);
+  list-style-type: none;
+  
+  transform-origin: 0% 0%;
+  transform: translate(0, -100%);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+/*----Main Visual----*/
+#top_main_visual{
+  display: block;
+  width: 100%;
+	
+  background:center /cover url("../images/PHX-sunset.jpeg");
+  background-repeat: no-repeat;
+}
+.top_main_copy{
+	height: auto;
+
+}
+.welcome_PHX{
+	margin: 0 auto;
+	padding: 20vh 5%;
+	width: 90%;
+	height: 30vh;
+	
+	background: url("../images/SVG/City-of-Phoenix.svg") no-repeat center  rgba(221,106,11,.50);
+}
+.top_main_copy article{
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	
+	background: #dd6a0b;
+	color: #f3f3f3;
+}
+.top_main_copy h1{
+	font-size: 2.4rem;
+}
+.top_main_copy p{
+	font-size: 1.2rem;
+}
+.scroll{
+	display: block;
+	height: 75px;
+	width: 250px;
+	margin: 10px auto;
+	
+	background:  url("../images/SVG/Scroll.svg") bottom no-repeat;
+}
+
+/*----Main----*/
+.left, .right{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	width: 100%;
+	margin: 0;
+}
+.left a, .right a{
+	color: white;
+}
+.left section, .right section{
+	width: 100%;
+	height: 667px;
+}
+.article_image{
+	display: flex;
+	align-content: center;
+	height: 48%;
+	width: 100%;
+}
+.num01{
+	background: 0% 10% / cover no-repeat url("../images/PHX-night.jpg");
+}
+.num02{
+	background: 60% 15% / 130% no-repeat url("../images/PHX-bar.jpg");
+}
+.num03{
+	background: 0% 10% / cover no-repeat url("../images/PHX-hs.jpg");
+}
+.num04{
+	background: 0% 10% / cover no-repeat url("../images/PHX-camelback.jpg");
+}
+.num05{
+	background: 60% 15% / cover no-repeat url("../images/PHX-asu.jpg");
+}
+.num06{
+	background: 0% 10% / cover no-repeat url("../images/PHX-mim.jpg");
+}
+.left section h2{
+	box-sizing: border-box;
+	padding: 12% 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	
+	font-weight: lighter;
+	font-size: 3.4rem;
+	
+	background: rgba(56,19,68,.80);
+	opacity: 0;
+	transform: scale(0.8);
+	transition:  0.5s ease;
+}
+.right section h2{
+	box-sizing: border-box;
+	padding: 12% 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	
+	font-weight: lighter;
+	font-size: 3.4rem;
+	
+	background: rgba(221,106,11,.80);
+	opacity: 0;
+	transform: scale(0.8);
+	transition:  0.5s ease;	
+}
+.left section h2:hover, .right section h2:hover{
+	opacity: 1;
+	transform: scale(1);
+}
+.left section p, .right section p{
+	height:52%;
+	width: 100%;
+	margin: 0;
+	padding: 20px;
+	box-sizing: border-box;
+	font-size: 1.4rem;
+	color: white;
+}
+.left section p{
+	background: rgba(56,19,68,1);  
+}
+.right section p{
+	background: rgba(221,106,11,1);  
+}
+
+/*----Footer----*/
+footer{
+	height: 340px;
+	width:100%;
+	margin: 0;
+	padding: 20px;
+	
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	box-sizing: border-box;
+	content-align: center;
+	
+	color: white;
+	background: rgba(50,50,50,1.00);
+}
+#footer-logo{
+	height: 180px;
+	width: 250px;
+	display:block;
+	margin: 20px auto;
+	
+	background: center / 70% url("../images/SVG/PHX_bird_logo-btm.svg") no-repeat;
+	border-bottom: 1px solid white;
+}
+footer small{
+	width: 100%;
+	text-align: center;
+	display: block;
+	clear: both;
+	margin: 30px auto;
+}
+
+/*----Media Queries----*/
+@media screen and (min-width: 768px){
+	#menuToggle span, #menuToggle input{
+		display:none;
+	}
+	#menuToggle{
+  		float: right;
+  		display: block;
+		width: 50%;
+		margin: 0;
+		position: static;
+	}
+	#menu{
+		display: flex;
+		justify-content:space-between;
+  		position: static;
+  		width: 100%;
+		height: 80px;
+  		margin:  0;
+		padding: 0px;
+		padding-top: 0px;
+		box-sizing: border-box;
+  		overflow: hidden;
+		vertical-align: middle;
+  
+  		background: rgba(50,50,50,1.00);
+  		list-style-type: none;
+  
+  		transform: none;
+		transition: none;
+	}
+
+	#menu li{
+		height: 80px;
+		width: 25%;
+  		padding: 0px;
+		box-sizing: border-box;
+		text-align: center;
+  		font-size: 25px;
+  		font-family: "Roboto", sans-serif;
+  		font-weight: 100;
+		transition: 0.5s ease;
+	}
+	#menu li:hover{
+		background:rgba(86,86,86,1.00);
+	}
+	#menuToggle a {
+    	height: 100%;
+    	width: 100%;
+    	display: inline-block;
+    	padding: 25px 0;
+		box-sizing: border-box;
+	}
+	#top_main_visual{
+		height: 1000px;
+		width: 100%;
+  		background: left /cover url("../images/PHX-sunset.jpeg");
+	}
+	.top_main_copy{
+		height: 100%;
+		width: 50%;
+		float: right;
+
+	}
+	.welcome_PHX{
+		padding: 0px;
+		width: 100%;
+		height: 60%;
+		box-sizing: border-box;
+	
+		background: url("../images/SVG/City-of-Phoenix.svg") no-repeat center / 80%  rgba(221,106,11,.50);
+	}
+	.top_main_copy article{
+		height: 40%;
+		padding: 10px 30px;
+	}
+	.top_main_copy h1{
+		font-size: 2.4rem;
+		}
+	.scroll{	
+		display: block;
+		height: 45px;
+		width: 150px;
+		margin: 40px auto;
+	}
+	.left, .right{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		width: 50%;
+		margin: 0;
+	}
+	.left{
+		 float: left;
+	}
+	footer{
+		padding: 30px;
+		flex-direction: row;
+	}
+	#footer-logo{
+		height: 100%;
+		width: 100%;
+		margin: 0px;
+	
+		background: center / 70% url("../images/SVG/PHX_bird_logo-side.svg") no-repeat;
+		border-right: 2px solid white;
+		border-bottom: none;
+	}
+	footer small{
+		margin: 130px 0px;
+	}
+}	
